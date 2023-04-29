@@ -9,7 +9,7 @@ app.engine('jsx', reactViewsEngine);
 // This line tells the render method the default file extension to look for
 app.set("view engine", "jsx");
 // This line sets the render method's default location to look for a jsx file to render. Without this line of code we would have specific the views directory every time we use the render method
-app.set("Views", "./views");
+app.set("views", "./views");
 
 // Custom middleware
 app.use(express.urlencoded({ extended:false} ));
@@ -24,7 +24,7 @@ app.get('/', (req, res) => {
 
   app.get('/pokemon', (req, res) => {
     console.log('Index Controller Func. running...');
-    res.render("Index", {pokemon});
+    res.render("Index", { pokemon: pokemon });
 });
 
 //Listen
