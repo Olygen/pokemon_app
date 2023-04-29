@@ -21,11 +21,11 @@ class Index extends React.Component {
 
                 return (
                     <li key={i}>
-                        The name is  {" "}
+                        {/* The name is  {" "} */}
                         <a href={`/pokemon/${i}`}>
                             {capitalizedPokemonName}
                         </a>{" "}
-                        {pokemon.img}
+                        {/* {pokemon.img} */}
                     </li>                     
                 );
             })}

@@ -27,6 +27,15 @@ app.get('/', (req, res) => {
     res.render("Index", { pokemon: pokemon });
 });
 
+  // Show
+  app.get('/pokemon/:id', (req, res) => {
+    res.render('Show', {
+      //second param must be an object
+      pokemon: pokemon[req.params.id],
+      //there will be a variable available inside the jsx file called pokemon, its value is pokemon[req.params.id]
+    });
+  });
+
 //Listen
 app.listen(PORT, () => {
     console.log(`listening on port: ${PORT}`);
