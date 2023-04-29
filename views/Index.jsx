@@ -18,6 +18,9 @@ class Index extends React.Component {
                 // Capitalize first letter of pokemon name
                 const capitalizedPokemonName =
               pokemon.name.slice(0, 1).toUpperCase() + pokemon.name.slice(1);
+              
+                // Add .jpg to the image link
+                const pokemonImageLink = pokemon.img + ".jpg";
 
                 return (
                     <li key={i}>
@@ -25,7 +28,7 @@ class Index extends React.Component {
                         <a href={`/pokemon/${i}`}>
                             {capitalizedPokemonName}
                         </a>{" "}
-                        {/* {pokemon.img} */}
+                        <img src={pokemonImageLink} alt={`${pokemon.name} image`} />
                     </li>                     
                 );
             })}
