@@ -3,7 +3,11 @@ const React = require("react");
 const header = {
   color: '#ffffff',
   backgroundColor: '#000000',
-  textAlign: 'center'
+  textAlign: 'center',
+  fontFamily: "Noto Sans, Arial, sans-serif",
+  paddingTop: "1px",
+  paddingBottom: "10px",
+  marginBottom: "30px"
 };
 
 const mainPage = {
@@ -15,10 +19,10 @@ const mainPage = {
 
 //   const mainPage = {
 //     display: 'grid',
-//     gridTemplateColumns: '15vw 15vw 15vw',
-//     gridTemplateRows: '15vw 15vw 15vw',
-//     justifyItems: 'stretch',
+//     gridTemplateColumns: 'repeat(3, 1fr)',
+//     justifyItems: 'center',
 //     justifyContent: 'center',
+//     alignItems: 'center',
 //   }
 
 
@@ -28,7 +32,8 @@ class Index extends React.Component {
     return (
       <div>
         <header style={header}>
-            <h1>See All The Pokemon!</h1>         
+            <h1>See All The Pokemon!</h1> 
+            Remember their names? Click and check if you are right!        
         </header>
         <container  style={mainPage}>
             {pokemon.map((pokemon, i) => {
@@ -42,12 +47,17 @@ class Index extends React.Component {
                 return (
                     <div key={i}>
                         <a href={`/pokemon/${i}`}>
-                        <img style={{ width: '40%' }} src={pokemonImageLink} alt={`${pokemon.name} image`} />
+                        <img style={{ width: '150px' }} src={pokemonImageLink} alt={`${pokemon.name} image`} />
                         </a>{" "}
                     </div>                     
                 );
             })}
         </container>
+        <create>
+            <a href="/pokemon/new">
+            <h2 style={{textAlign: "center"}}>Remember other pokemon?</h2>
+            </a>
+        </create>
       </div>
     );
   }
