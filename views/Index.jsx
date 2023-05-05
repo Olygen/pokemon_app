@@ -46,7 +46,7 @@ class Index extends React.Component {
 
                 return (
                     <div key={i}>
-                        <a href={`/pokemon/${i}`}>
+                        <a href={`/pokemon/${pokemon._id}`}>
                         <img style={{ width: '150px' }} src={pokemonImageLink} alt={`${pokemon.name} image`} />
                         </a>{" "}
                     </div>                     

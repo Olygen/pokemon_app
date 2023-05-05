@@ -6,6 +6,7 @@ const Pokemon = require('./models/pokemon');
 const allPokemon = require('./models/allPokemon');
 const { connect, connection } = require('mongoose');
 
+
 // Database connection
 connect(process.env.MONGO_URI, {
     // Having these two properties set to true is best practice when connecting to MongoDB
@@ -56,10 +57,10 @@ app.get('/', (req, res) => {
     }
   });
 
-app.get('/pokemon', (req, res) => {
-    console.log('Index Controller Func. running...');
-    res.render("Index", { pokemon: Pokemon });
-});
+// app.get('/pokemon', (req, res) => {
+//     console.log('Index Controller Func. running...');
+//     res.render("Index", { pokemon: Pokemon });
+// });
 
 // This is our data for all pokemon names as I can't remember them)))
 app.get('/pokemon/allnames', (req, res) => {
